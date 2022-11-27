@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        label,
+        input,
+        button {
+            border: 0;
+            margin-bottom: 3px;
+            display: block;
+            width: 90%;
+        }
+        
+        .common_box_body {
+            padding: 15px;
+            border: 12px solid #2862ba;
+            border-color: #ba2840;
+            border-radius: 15px;
+            margin-top: 10px;
+            background: #d4d9ed;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+</head>
+
+<body>
+    <div class="common_box_body test">
+        <h2>Registration</h2>
+        <form action="#" name="registration" id="registration">
+
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" placeholder="Enter your Name"><br>
+
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" placeholder="Enter your lastname"><br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your Emai-id"><br>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password"><br>
+
+            <input name="submit" type="submit" id="submit" class="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function() {
+        $("#registration").validate({
+            // Specify validation rules
+            rules: {
+                firstname: "required",
+                lastname: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+
+        });
+    });
+</script>
+
+</html>a
